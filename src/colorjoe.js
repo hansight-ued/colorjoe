@@ -1,8 +1,9 @@
-var drag = require('dragjs');
-var ONECOLOR = require('onecolor/one-color-all'); // Use the all build with cmyk and everything
-var utils = require('./utils');
-var extras = require('./extras');
+import drag from 'dragjs';
+import one from 'onecolor'; // Use the all build with cmyk and everything
+import utils from './utils';
+import extras from './extras';
 
+var ONECOLOR = one.color;
 var colorjoe = function(cbs) {
     if (!all(isFunction, [cbs.init, cbs.xy, cbs.z])) {
         return console.warn("colorjoe: missing cb");
@@ -329,4 +330,4 @@ function id(a) {
     return a;
 }
 
-module.exports = colorjoe;
+export default colorjoe;

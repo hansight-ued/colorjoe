@@ -8,11 +8,15 @@ const yyyymmdd = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, 
 
 const config = {
   input: 'src/colorjoe.js',
+  external: ['onecolor'],
   output: {
     file: 'dist/colorjoe.js',
     name: 'colorjoe',
     format: 'umd',
     sourcemap: true,
+    globals: {
+      onecolor: 'one'
+    },
     banner: `/*! ${pkg.name} - v${pkg.version} - ${pkg.author} - ${pkg.license}\n${pkg.homepage} - ${yyyymmdd} */`
   },
   watch: {
